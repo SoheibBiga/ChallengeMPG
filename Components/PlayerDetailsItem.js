@@ -11,7 +11,7 @@ export default class PlayerDetailsItem extends Component {
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
         {arrayInfosToDisplay.map((info) => {
           const key = Object.keys(info);
-          let value = data.stats;
+          let value = data["stats"];
           if (Array.isArray(info[key])) {
             for (const itPath of info[key]) {
               value = value[itPath];
@@ -33,6 +33,6 @@ export default class PlayerDetailsItem extends Component {
 
 PlayerDetailsItem.propTypes = {
   title: PropTypes.string.isRequired,
-  arrayInfosToDisplay: PropTypes.node,
-  data: PropTypes.string.isRequired,
+  arrayInfosToDisplay: PropTypes.array,
+  data: PropTypes.object.isRequired,
 };
